@@ -3,7 +3,7 @@ let arr = [];
 let a = document.querySelectorAll(".btn");
 
 function fn(){
-  if (count==10) {
+  
       
   let = c= document.querySelectorAll("#cross")
 for (let i = 0; i < c.length; i++) {
@@ -18,39 +18,48 @@ for (let i = 0; i < c.length; i++) {
       arr[i]=0;
     }
   }
-  console.log(arr);
+  
 }
   
-      
+function l(element){
+    arr[element.id]=1;
+    console.log(arr);
 
 }
-const getarr = ()=>{
+
+
+
   a.forEach( element => {
     
  let cross= element.querySelector("#cross");
  let zero =  element.querySelector("#zero");
-  element.addEventListener("click",()=>{ 
+  element.addEventListener("click", function getarr(){ 
   
-   if (count%2==0) {
-    cross.style.zIndex="1";
-   zero.style.zIndex="-1";
-   }else{
-      cross.style.zIndex="-1";
-   zero.style.zIndex="1";
-   }
-  
-    
-         count++;
-       fn();
-
+    if (count%2==0) {
+     cross.style.zIndex="1";
+    zero.style.zIndex="-1";
+    }else{
+       cross.style.zIndex="-1";
+    zero.style.zIndex="1";
+    }
+   
+     
+          count++;
+          if(count==8){
+            fn();
+          }
+   
+        if (count==9) {
+          l(element)
+        }
+      
+   },{once :true});
   
   })
- 
+  
+  
 
-  
-  
-})}
-getarr();
+
 
 
  
